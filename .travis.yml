@@ -1,0 +1,21 @@
+language: cpp
+
+notifications:
+  email: false
+
+os:
+  - linux
+  - osx
+
+script:
+  - "./build-travis.sh"
+  - tar cfvz tesseract-$TRAVIS_OS_NAME.tar.gz --directory="tesseract/bin" .
+
+deploy:
+  provider: releases
+  api_key:
+    secure: DFMOIXMHFfLrjcI/KX14GAGHeBiVAxoGldfJtc7STsrnf47YaJ/RNr8u/7ZZZn4yDHwxgf94Z3vloVpcbJwliAV0ksjwDi7yvoQjaXoV3UuaMZX4Yazpk+WjKiwqQEi/O8uDmvZYmfhVKn2Js2u/3ed8eFdQz+0Cht2ne7+bcmiUfN547kLn1qpICoW5IcnuEZcYPDuVLzTwPsYqzp3r26d+KI/rrcCgM9B53peohqaXYDndBddL+KlntOExalnCAbZG//AeUGOh6H7UBnfUYg5TwefzvVszpC1q9gplH+RYBrdRoCIth/rSNwVJ7FYxlsQpCDaf/ph4P6KMbHm3gWCee4gHyapCQEWv6/2EQzcpPV9uNsUvo/JBED/r1Uu0DpqE+IYEuSQUZFA+v/T6annFP2GPIXE1eCJBWW1upi8PKDoRpjti+KzvyT8oV+XWl5X/qKQ5YFHCNrlvzydFSyFSVZwDuWlCg4oECy+PQBxS3Z+PgY1nyvfTCPl2xrEsU9CuwSHy9UJgs/IXqdjF2tieQm4KUYo9gttsc4oNNqw2g8ZkALmNK2kKmTuVnM1NC5B/snsGaYkmsbpcAl2zDZ6deFbq6BN+BbSN7MwJmWg0Rmi+OZd77e6ON4UbSPUAX5TM72EKRI56QWI44ZB9GuL664RuV1bv/YQYTqQWrSU=
+  file: tesseract-$TRAVIS_OS_NAME.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true

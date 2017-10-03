@@ -1,0 +1,18 @@
+[submodule "src/tesseract"]
+	path = src/tesseract
+	url = https://github.com/tesseract-ocr/tesseract.git
+[submodule "src/zlib"]
+	path = src/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "src/libpng"]
+	path = src/libpng
+	url = https://github.com/glennrp/libpng.git
+[submodule "src/leptonica"]
+	path = src/leptonica
+	url = https://github.com/DanBloomberg/leptonica.git
+[submodule "src/libjpeg"]
+	path = src/libjpeg
+	url = https://github.com/libjpeg-turbo/ijg.git
+[submodule "src/libtiff"]
+	path = src/libtiff
+	url = https://github.com/vadz/libtiff.git
